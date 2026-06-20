@@ -1,0 +1,122 @@
+.dashboard {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 18px;
+  color: var(--color-text-primary);
+}
+
+.narrative {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metricCard {
+  background-color: var(--color-bg);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.metricLabel {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.metricValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.alertValue {
+  color: #c94c4c;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th, .table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+}
+
+.table tr:hover td {
+  background-color: var(--color-surface-hover);
+}
+
+.anomalyRow td {
+  background-color: rgba(201, 76, 76, 0.04);
+}
+
+.expense {
+  color: var(--color-text-primary);
+}
+
+.income {
+  color: #4a7c59;
+}
+
+.categoryPill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.anomalyBadge {
+  color: #c94c4c;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.normalBadge {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 32px !important;
+  color: var(--color-text-secondary);
+}

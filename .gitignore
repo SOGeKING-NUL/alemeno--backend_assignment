@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+client/node_modules/
+client/.next/
+client/out/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Uploads directory
+uploads/
