@@ -1,11 +1,10 @@
 from fastapi import FastAPI
 from app.api.routes import api_router
 from app.core.database import engine, Base
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create all tables in the database (simple migration)
 Base.metadata.create_all(bind=engine)
-
-from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Transaction Processing Pipeline",

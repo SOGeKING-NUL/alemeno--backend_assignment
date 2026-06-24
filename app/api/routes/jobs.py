@@ -11,6 +11,8 @@ from app.models.summary import JobSummary
 from app.schemas.job import JobResponse, JobUploadResponse, JobStatusResponse
 from app.schemas.transaction import JobResultResponse
 from app.worker.tasks import process_transaction_file
+import time
+
 
 router = APIRouter()
 
@@ -27,7 +29,6 @@ async def upload_transactions(file: UploadFile = File(...), db: Session = Depend
     # Save file temporarily
     file_path = os.path.join(UPLOAD_DIR, f"{file.filename}")
     # Handle duplicates by adding timestamp if needed, but for now just overwrite
-    import time
     file_path = os.path.join(UPLOAD_DIR, f"{int(time.time())}_{file.filename}")
     
     with open(file_path, "wb") as buffer:

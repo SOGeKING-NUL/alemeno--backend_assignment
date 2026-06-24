@@ -9,9 +9,6 @@ def get_llm_client():
     )
 
 def classify_transactions(transactions_data: list[dict]) -> dict:
-    """
-    Call OpenRouter LLM to classify a batch of transactions.
-    """
     if not transactions_data:
         return {}
 
@@ -33,7 +30,10 @@ def classify_transactions(transactions_data: list[dict]) -> dict:
         messages=[
             {"role": "user", "content": prompt}
         ],
-        temperature=0.0
+        temperature=0.0 
+        # 0.0–0.3  → Classification, extraction, coding
+        # 0.5–0.8  → General chat
+        # 0.8–1.5  → Creative writing, brainstorming
     )
     
     try:
@@ -50,10 +50,7 @@ def classify_transactions(transactions_data: list[dict]) -> dict:
 
 
 def generate_narrative_summary(total_inr: float, total_usd: float, top_merchants: list, anomaly_count: int) -> tuple[str, str]:
-    """
-    Call OpenRouter LLM to generate a narrative summary and risk level.
-    Returns (narrative, risk_level)
-    """
+
     client = get_llm_client()
     
     prompt = f"""
